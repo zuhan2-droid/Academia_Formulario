@@ -125,7 +125,10 @@
 
         <!-- FORMULARIO ORIGINAL -->
         <!-- ⚠️ NO OLVIDES PONER TU URL DE N8N AQUÍ ⚠️ -->
-        <form id="musicForm" action="https://n8n.deflexxio.com/webhook-test/0885a268-0588-4666-9ada-27127f5daaa7" method="POST">
+       fetch("https://n8n.deflexxio.com/webhook/0885a268-0588-4666-9ada-27127f5daaa7", {
+  method: "POST",
+  body: formData
+});
             
             <div class="input-group">
                 <label for="nombre">Nombre</label>
