@@ -1,218 +1,320 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia de Música - Clase de Prueba</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #070711;
-            --cyan: #00f0ff;
-            --purple: #b026ff;
-            --orange: #ff9900;
-            --green: #00ff66;
-            --white: #ffffff;
-            --glass-bg: rgba(20, 20, 35, 0.7);
-            --border-glow: rgba(0, 240, 255, 0.3);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia de Música - Clase de Prueba</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
 
-        body {
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(0, 240, 255, 0.08), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(176, 38, 255, 0.08), transparent 25%);
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+  <style>
+    :root {
+      --bg-color: #070711;
+      --cyan: #00f0ff;
+      --purple: #b026ff;
+      --orange: #ff9900;
+      --green: #00ff66;
+      --white: #ffffff;
+      --glass-bg: rgba(20, 20, 35, 0.7);
+      --border-glow: rgba(0, 240, 255, 0.3);
+    }
 
-        .form-container {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--border-glow);
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.1), inset 0 0 20px rgba(176, 38, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px 30px;
-            width: 100%;
-            max-width: 450px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .form-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--cyan), var(--purple), transparent);
-        }
+    body {
+      background-color: var(--bg-color);
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(0, 240, 255, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(176, 38, 255, 0.08), transparent 25%);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-        h2 { font-size: 1.2rem; font-weight: 400; letter-spacing: 2px; color: #a0a0b5; margin-bottom: 5px; text-transform: uppercase; }
-        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 5px; background: linear-gradient(90deg, var(--cyan), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px rgba(0, 240, 255, 0.3); text-transform: uppercase; }
-        p.subtitle { font-size: 1rem; color: var(--cyan); margin-bottom: 30px; font-weight: 600; letter-spacing: 1px; }
+    .form-container {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glow);
+      box-shadow:
+        0 0 30px rgba(0, 240, 255, 0.1),
+        inset 0 0 20px rgba(176, 38, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
 
-        .input-group { position: relative; margin-bottom: 25px; text-align: left; }
-        .input-group label { display: block; font-size: 0.85rem; color: #a0a0b5; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-        .input-group input, .input-group select { width: 100%; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 14px 15px; color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 1rem; transition: all 0.3s ease; outline: none; }
-        .input-group input:focus, .input-group select:focus { border-color: var(--purple); box-shadow: 0 0 15px rgba(176, 38, 255, 0.3); background: rgba(0, 0, 0, 0.5); }
-        .input-group select option { background-color: var(--bg-color); color: var(--white); }
+    .form-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), var(--purple), transparent);
+    }
 
-        .submit-btn { background: linear-gradient(45deg, var(--purple), #ff00ff); border: none; border-radius: 30px; color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; padding: 16px 20px; width: 100%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(176, 38, 255, 0.4); margin-top: 10px; }
-        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0, 240, 255, 0.6); background: linear-gradient(45deg, var(--cyan), var(--purple)); }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #a0a0b5;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
 
-        /* Estilos del mensaje de éxito (oculto por defecto) */
-        #success-message {
-            display: none;
-            padding: 20px 0;
-            animation: fadeIn 0.8s ease;
-        }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 5px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+      text-transform: uppercase;
+    }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    p.subtitle {
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
 
-        .success-icon {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, var(--cyan), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .input-group {
+      position: relative;
+      margin-bottom: 25px;
+      text-align: left;
+    }
 
-        .success-text {
-            color: #e0e0e0;
-            line-height: 1.6;
-            font-size: 0.95rem;
-            margin-top: 15px;
-        }
-    </style>
+    .input-group label {
+      display: block;
+      font-size: 0.85rem;
+      color: #a0a0b5;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 14px 15px;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .input-group select option {
+      background-color: var(--bg-color);
+      color: var(--white);
+    }
+
+    .submit-btn {
+      background: linear-gradient(45deg, var(--purple), #ff00ff);
+      border: none;
+      border-radius: 30px;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 16px 20px;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(176, 38, 255, 0.4);
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+      background: linear-gradient(45deg, var(--cyan), var(--purple));
+    }
+
+    #success-message {
+      display: none;
+      padding: 20px 0;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .success-icon {
+      font-size: 4rem;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .success-text {
+      color: #e0e0e0;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin-top: 15px;
+    }
+
+    .error-message {
+      display: none;
+      margin-top: 18px;
+      color: #ff7a7a;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="form-container">
 
-    <div class="form-container">
-        
-        <!-- CABECERA (Se mantiene visible) -->
-        <h2>Academia de Música</h2>
-        <h1>Descubre tu Ritmo</h1>
-        <p class="subtitle" id="subtitle-text">CLASE DE PRUEBA GRATIS</p>
+    <h2>Academia de Música</h2>
+    <h1>Descubre tu Ritmo</h1>
+    <p class="subtitle" id="subtitle-text">CLASE DE PRUEBA GRATIS</p>
 
-        <!-- MENSAJE DE ÉXITO (Oculto al principio) -->
-        <div id="success-message">
-            <div class="success-icon">✨🎸✨</div>
-            <h2 style="color: var(--cyan); font-size: 1.5rem; margin-bottom: 10px; font-weight: 800;">¡Reserva Solicitada!</h2>
-            <p class="success-text">
-                Tus datos han volado a nuestro sistema. <br><br>
-                Revisa tu bandeja de entrada (y la carpeta de SPAM) en unos minutos para confirmar tu horario.
-            </p>
-        </div>
-
-        <!-- FORMULARIO ORIGINAL -->
-        <!-- ⚠️ NO OLVIDES PONER TU URL DE N8N AQUÍ ⚠️ -->
-       fetch("https://n8n.deflexxio.com/webhook/0885a268-0588-4666-9ada-27127f5daaa7", {
-  method: "POST",
-  body: formData
-});
-            
-            <div class="input-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="Nombre" required placeholder="Ej. Jesús">
-            </div>
-
-            <div class="input-group">
-                <label for="apellido">Apellido</label>
-                <input type="text" id="apellido" name="Apellido" required placeholder="Ej. Jereso">
-            </div>
-
-            <div class="input-group">
-                <label for="dni">DNI / NIE</label>
-                <input type="text" id="dni" name="DNI / NIE" required placeholder="12345678A">
-            </div>
-
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="Email" required placeholder="tu@email.com">
-            </div>
-
-            <div class="input-group">
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="Teléfono" required placeholder="+34 600 000 000">
-            </div>
-
-            <div class="input-group">
-                <label for="instrumento">Elige tu instrumento</label>
-                <select id="instrumento" name="Instrumento" required>
-                    <option value="" disabled selected>Selecciona una opción...</option>
-                    <option value="Guitarra">🎸 Guitarra - Expresa tu pasión</option>
-                    <option value="Saxofón">🎷 Saxofón - Siente la libertad</option>
-                    <option value="Batería">🥁 Batería - Marca tu ritmo</option>
-                    <option value="Violín">🎻 Violín - Conecta tu emoción</option>
-                </select>
-            </div>
-
-            <button type="submit" class="submit-btn" id="submitBtn">Reserva tu plaza</button>
-        </form>
+    <div id="success-message">
+      <div class="success-icon">✨🎸✨</div>
+      <h2 style="color: var(--cyan); font-size: 1.5rem; margin-bottom: 10px; font-weight: 800;">
+        ¡Reserva Solicitada!
+      </h2>
+      <p class="success-text">
+        Tus datos han volado a nuestro sistema.<br><br>
+        Revisa tu bandeja de entrada y la carpeta de spam en unos minutos para confirmar tu horario.
+      </p>
     </div>
 
-    <!-- MAGIA JAVASCRIPT -->
-    <script>
-        const form = document.getElementById('musicForm');
-        const successMessage = document.getElementById('success-message');
-        const submitBtn = document.getElementById('submitBtn');
-        const subtitleText = document.getElementById('subtitle-text');
+    <form
+      id="musicForm"
+      action="https://n8n.deflexxio.com/webhook/0885a268-0588-4666-9ada-27127f5daaa7"
+      method="POST"
+    >
+      <div class="input-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="Nombre" required placeholder="Ej. Jesús" />
+      </div>
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Evita que el navegador cambie de página
+      <div class="input-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="Apellido" required placeholder="Ej. Jereso" />
+      </div>
 
-            // Cambiamos el texto del botón mientras envía
-            submitBtn.textContent = 'Enviando... 🚀';
-            submitBtn.style.opacity = '0.7';
-            submitBtn.disabled = true;
+      <div class="input-group">
+        <label for="dni">DNI / NIE</label>
+        <input type="text" id="dni" name="DNI / NIE" required placeholder="12345678A" />
+      </div>
 
-            // Recogemos los datos
-            const formData = new FormData(form);
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required placeholder="tu@email.com" />
+      </div>
 
-            // Enviamos los datos al webhook de n8n por debajo
-            fetch(form.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                // Si todo va bien, ocultamos el formulario y mostramos el mensaje de éxito
-                form.style.display = 'none';
-                subtitleText.style.display = 'none'; // Ocultamos el subtitulo original
-                successMessage.style.display = 'block';
-            })
-            .catch(error => {
-                // Si hay un error, avisamos al usuario
-                console.error('Error:', error);
-                submitBtn.textContent = '❌ Error de conexión';
-                submitBtn.style.background = 'red';
-                setTimeout(() => {
-                    submitBtn.textContent = 'Reserva tu plaza';
-                    submitBtn.style.background = '';
-                    submitBtn.style.opacity = '1';
-                    submitBtn.disabled = false;
-                }, 3000);
-            });
+      <div class="input-group">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="Teléfono" required placeholder="+34 600 000 000" />
+      </div>
+
+      <div class="input-group">
+        <label for="instrumento">Elige tu instrumento</label>
+        <select id="instrumento" name="Instrumento" required>
+          <option value="" disabled selected>Selecciona una opción...</option>
+          <option value="Guitarra">🎸 Guitarra - Expresa tu pasión</option>
+          <option value="Saxofón">🎷 Saxofón - Siente la libertad</option>
+          <option value="Batería">🥁 Batería - Marca tu ritmo</option>
+          <option value="Violín">🎻 Violín - Conecta tu emoción</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Reserva tu plaza</button>
+
+      <p class="error-message" id="errorMessage">
+        No se pudo enviar la solicitud. Revisa la conexión e inténtalo de nuevo.
+      </p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('musicForm');
+    const successMessage = document.getElementById('success-message');
+    const submitBtn = document.getElementById('submitBtn');
+    const subtitleText = document.getElementById('subtitle-text');
+    const errorMessage = document.getElementById('errorMessage');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      submitBtn.textContent = 'Enviando... 🚀';
+      submitBtn.style.opacity = '0.7';
+      submitBtn.disabled = true;
+      errorMessage.style.display = 'none';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData
         });
-    </script>
 
+        if (!response.ok) {
+          throw new Error('Respuesta no válida del servidor');
+        }
+
+        form.style.display = 'none';
+        subtitleText.style.display = 'none';
+        successMessage.style.display = 'block';
+
+      } catch (error) {
+        console.error('Error:', error);
+
+        errorMessage.style.display = 'block';
+        submitBtn.textContent = 'Reserva tu plaza';
+        submitBtn.style.opacity = '1';
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>
+```
