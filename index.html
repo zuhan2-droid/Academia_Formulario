@@ -52,9 +52,9 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            transition: all 0.5s ease;
         }
 
-        /* Top neon line accent */
         .form-container::before {
             content: '';
             position: absolute;
@@ -66,114 +66,66 @@
             background: linear-gradient(90deg, transparent, var(--cyan), var(--purple), transparent);
         }
 
-        h2 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            color: #a0a0b5;
-            margin-bottom: 5px;
-            text-transform: uppercase;
+        h2 { font-size: 1.2rem; font-weight: 400; letter-spacing: 2px; color: #a0a0b5; margin-bottom: 5px; text-transform: uppercase; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 5px; background: linear-gradient(90deg, var(--cyan), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px rgba(0, 240, 255, 0.3); text-transform: uppercase; }
+        p.subtitle { font-size: 1rem; color: var(--cyan); margin-bottom: 30px; font-weight: 600; letter-spacing: 1px; }
+
+        .input-group { position: relative; margin-bottom: 25px; text-align: left; }
+        .input-group label { display: block; font-size: 0.85rem; color: #a0a0b5; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .input-group input, .input-group select { width: 100%; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 14px 15px; color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 1rem; transition: all 0.3s ease; outline: none; }
+        .input-group input:focus, .input-group select:focus { border-color: var(--purple); box-shadow: 0 0 15px rgba(176, 38, 255, 0.3); background: rgba(0, 0, 0, 0.5); }
+        .input-group select option { background-color: var(--bg-color); color: var(--white); }
+
+        .submit-btn { background: linear-gradient(45deg, var(--purple), #ff00ff); border: none; border-radius: 30px; color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; padding: 16px 20px; width: 100%; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(176, 38, 255, 0.4); margin-top: 10px; }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0, 240, 255, 0.6); background: linear-gradient(45deg, var(--cyan), var(--purple)); }
+
+        /* Estilos del mensaje de éxito (oculto por defecto) */
+        #success-message {
+            display: none;
+            padding: 20px 0;
+            animation: fadeIn 0.8s ease;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-            background: linear-gradient(90deg, var(--cyan), var(--purple));
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-            text-transform: uppercase;
         }
 
-        p.subtitle {
-            font-size: 1rem;
-            color: var(--cyan);
-            margin-bottom: 30px;
-            font-weight: 600;
-            letter-spacing: 1px;
+        .success-text {
+            color: #e0e0e0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-top: 15px;
         }
-
-        .input-group {
-            position: relative;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .input-group label {
-            display: block;
-            font-size: 0.85rem;
-            color: #a0a0b5;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .input-group input, 
-        .input-group select {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 14px 15px;
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            outline: none;
-        }
-
-        .input-group input:focus, 
-        .input-group select:focus {
-            border-color: var(--purple);
-            box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        /* Style for select dropdown options */
-        .input-group select option {
-            background-color: var(--bg-color);
-            color: var(--white);
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, var(--purple), #ff00ff);
-            border: none;
-            border-radius: 30px;
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 16px 20px;
-            width: 100%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(176, 38, 255, 0.4);
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
-            background: linear-gradient(45deg, var(--cyan), var(--purple));
-        }
-
-        /* Instrument color highlights on focus based on the image */
-        select:focus { border-color: var(--cyan); box-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
-
     </style>
 </head>
 <body>
 
     <div class="form-container">
+        
+        <!-- CABECERA (Se mantiene visible) -->
         <h2>Academia de Música</h2>
         <h1>Descubre tu Ritmo</h1>
-        <p class="subtitle">CLASE DE PRUEBA GRATIS</p>
+        <p class="subtitle" id="subtitle-text">CLASE DE PRUEBA GRATIS</p>
 
-        <!-- REEMPLAZA ESTA URL CON LA URL DE TU WEBHOOK DE N8N -->
-        <form action="https://n8n.deflexxio.com/webhook/0885a268-0588-4666-9ada-27127f5daaa7" method="POST">
+        <!-- MENSAJE DE ÉXITO (Oculto al principio) -->
+        <div id="success-message">
+            <div class="success-icon">✨🎸✨</div>
+            <h2 style="color: var(--cyan); font-size: 1.5rem; margin-bottom: 10px; font-weight: 800;">¡Reserva Solicitada!</h2>
+            <p class="success-text">
+                Tus datos han volado a nuestro sistema. <br><br>
+                Revisa tu bandeja de entrada (y la carpeta de SPAM) en unos minutos para confirmar tu horario.
+            </p>
+        </div>
+
+        <!-- FORMULARIO ORIGINAL -->
+        <!-- ⚠️ NO OLVIDES PONER TU URL DE N8N AQUÍ ⚠️ -->
+        <form id="musicForm" action="TU_URL_DEL_WEBHOOK_DE_N8N_AQUI" method="POST">
             
             <div class="input-group">
                 <label for="nombre">Nombre</label>
@@ -211,9 +163,53 @@
                 </select>
             </div>
 
-            <button type="submit" class="submit-btn">Reserva tu plaza</button>
+            <button type="submit" class="submit-btn" id="submitBtn">Reserva tu plaza</button>
         </form>
     </div>
+
+    <!-- MAGIA JAVASCRIPT -->
+    <script>
+        const form = document.getElementById('musicForm');
+        const successMessage = document.getElementById('success-message');
+        const submitBtn = document.getElementById('submitBtn');
+        const subtitleText = document.getElementById('subtitle-text');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que el navegador cambie de página
+
+            // Cambiamos el texto del botón mientras envía
+            submitBtn.textContent = 'Enviando... 🚀';
+            submitBtn.style.opacity = '0.7';
+            submitBtn.disabled = true;
+
+            // Recogemos los datos
+            const formData = new FormData(form);
+
+            // Enviamos los datos al webhook de n8n por debajo
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                // Si todo va bien, ocultamos el formulario y mostramos el mensaje de éxito
+                form.style.display = 'none';
+                subtitleText.style.display = 'none'; // Ocultamos el subtitulo original
+                successMessage.style.display = 'block';
+            })
+            .catch(error => {
+                // Si hay un error, avisamos al usuario
+                console.error('Error:', error);
+                submitBtn.textContent = '❌ Error de conexión';
+                submitBtn.style.background = 'red';
+                setTimeout(() => {
+                    submitBtn.textContent = 'Reserva tu plaza';
+                    submitBtn.style.background = '';
+                    submitBtn.style.opacity = '1';
+                    submitBtn.disabled = false;
+                }, 3000);
+            });
+        });
+    </script>
 
 </body>
 </html>
